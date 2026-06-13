@@ -6,8 +6,8 @@ Prebuilt high-resolution land edge index files for [signalk-weather-routing](htt
 
 | File | Size (gzipped) | Description |
 |---|---|---|
-| `edge-index.bin.gz` | 22 MB | Land edge index, GSHHG f-tier (full resolution), 179,837 polygons |
-| `dilated-edge-index.bin.gz` | 75 MB | Same data dilated by 0.5 NM and union-merged to 16,802 polygons |
+| `edge-index-hires.bin.gz` | 22 MB | Land edge index, GSHHG f-tier (full resolution), 179,837 polygons |
+| `dilated-edge-index-hires.bin.gz` | 75 MB | Same data dilated by 0.5 NM and union-merged to 16,802 polygons |
 
 ## Source data
 
