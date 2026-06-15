@@ -2,20 +2,35 @@
 
 Prebuilt high-resolution land edge index files for [signalk-weather-routing](https://github.com/kristianwiklund/signalk-weather-routing).
 
-## Contents
+## Download
 
-| File | Size (gzipped) | Description |
+The binary files are distributed as **release assets** (not committed to the repo) because they exceed GitHub's 100 MB file limit.
+
+Download the latest files from the [releases page](https://github.com/kristianwiklund/weather-routing-hires-land-data/releases):
+
+| File | Size | Description |
 |---|---|---|
-| `edge-index-hires.bin.gz` | 22 MB | Land edge index, GSHHG f-tier (full resolution), 179,837 polygons |
-| `dilated-edge-index-hires.bin.gz` | 75 MB | Same data dilated by 0.5 NM and union-merged to 16,802 polygons |
+| `edge-index-hires.bin.gz` | ~87 MB | Land edge index, GSHHG f-tier (full resolution, ~100 m), 179,837 polygons |
+| `dilated-edge-index-hires.bin.gz` | ~160 MB | Same data dilated by 0.5 NM and union-merged |
+
+## Installation
+
+Copy both files into the plugin's `data/` directory:
+
+```bash
+cp edge-index-hires.bin.gz dilated-edge-index-hires.bin.gz /path/to/signalk-weather-routing/data/
+```
+
+The plugin detects the files at startup and automatically switches to the high-resolution land index. The sidebar will show "(hires)" next to the Land overlay checkbox.
 
 ## Source data
 
 Built from [GSHHG](https://www.soest.hawaii.edu/pwessel/gshhg/) (Global Self-consistent, Hierarchical, High-resolution Geography Database) version 2.3.7, full resolution (`f`) tier.
 
-## Format
-
-Binary edge-index format consumed directly by the signalk-weather-routing land avoidance engine. Files are gzip-compressed.
+Build command:
+```
+python3 scripts/prepare-land-data.py -r f
+```
 
 ## License
 
